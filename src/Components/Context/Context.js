@@ -1,20 +1,12 @@
-import React, { Component } from "react";
+import React, { createContext } from "react";
 
 export const Context = createContext();
-export default class ContextProvider extends Component {
-  state = {
-    loggedIn: false,
+export default function ContextProvider({ children }) {
+  const [test, setTest] = React.useState(0);
+
+  const value = {
+    test,
+    setTest,
   };
-  updateState(data = {}) {
-    this.setState({ ...data });
-  }
-  render() {
-    return (
-      <Context.Provider
-        value={{ ...this.state, updateState: this.updateState }}
-      >
-        {this.props.children}
-      </Context.Provider>
-    );
-  }
+  return <Context.Provider value={value}>{children}</Context.Provider>;
 }
