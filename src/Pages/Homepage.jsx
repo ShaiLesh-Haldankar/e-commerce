@@ -1,62 +1,74 @@
-import React, { useContext } from "react";
-import Footer from "../Components/Footer/Footer";
-import Header from "../Components/Header/Header";
+import React, { useContext, useEffect } from "react";
 import Layout from "../Components/Layout/Layout";
 import "./homepage.scss";
 import { Context } from "./../Components/Context/Context";
 export default function Homepage() {
-  const data = useContext(Context);
-  const [count, setCount] = React.useState(0)
+  const context = useContext(Context);
+  const [count, setCount] = React.useState(0);
+  useEffect(() => {
+    // setList(arrayTest);
+
+
+
+  }, []);
+
   return (
     <>
       <Layout>
-        {arrayTest.map((obj) => (
-          <div className="card">
-            <img src={obj.productImage}/>
+        <div className="homepage">
+          {arrayTest.map((data) => (
+            <div className="card">
+              <img src="https://www.91-img.com/gallery_images_uploads/d/7/d7cf5e2b1a3a3dfcca8a8dbb524fb11a8fb1c8e8.JPG?tr=h-550,w-0,c-at_max" />
+              <h5>{data.productName}</h5>
+              <p>{data.price.currentPrice}</p>
+              {data.inStock > 0?<button onClick={()=>context.setCartCount(context.cartCount + 1)}>Add to Cart</button>: <h6>Out of Stock</h6>}
+            </div>
+          ))}
+
+          {/* {
+            arrayTest.map(obj =>  <div className="card">
+            <img src="https://www.91-img.com/gallery_images_uploads/d/7/d7cf5e2b1a3a3dfcca8a8dbb524fb11a8fb1c8e8.JPG?tr=h-550,w-0,c-at_max" />
             <h5>{obj.productName}</h5>
-            <h6>{obj.price}</h6>
-            <p>{obj.brand}</p>
-            <ul>
-              {obj.specs.map((spec) => (
-                <li>{spec}</li>
-              ))}
-            </ul>
-            {obj.showCompare ? <button>COmpare</button> : null}
-            <button onClick={() => data.setTest(data.test + 1)}>
-              Add to cart
-            </button>
-          </div>
-        ))}
+            <p>{obj.price.currentPrice}</p>
+            <button>Add to Cart</button>
+          </div>)
+          } */}
+        </div>
       </Layout>
     </>
   );
 }
 const arrayTest = [
   {
-    price: 20,
-    productName: "Hello1",
-    brand: "Hello Brand",
-    specs: ["1", "2", "3", "4"],
-    warranty: "1 year warranty",
-    productImage: "https://www.91-img.com/gallery_images_uploads/d/7/d7cf5e2b1a3a3dfcca8a8dbb524fb11a8fb1c8e8.JPG?tr=h-550,w-0,c-at_max",
-    reviews: {
-      averageRating: 3.3,
-      noOfrating: 100,
+    productName: "Phone 1",
+    price: {
+      originalPrice: "23000",
+      offerPrice: "17000",
+      currentPrice: "17000",
+      primePrice: 15000,
     },
-    showCompare: true,
+    image:
+      "https://www.91-img.com/gallery_images_uploads/d/7/d7cf5e2b1a3a3dfcca8a8dbb524fb11a8fb1c8e8.JPG?tr=h-550,w-0,c-at_max",
+    inStock: 10,
+    rating: {
+      average: 4.1,
+      numberOfRatings: 200,
+    },
   },
   {
-    price: 40,
-    productName: "Infi1",
-    brand: "Hello Infi",
-    productImage: "",
-    specs: ["1", "2", "3", "4"],
-    warranty: "2 year warranty",
-    reviews: {
-      averageRating: 4.3,
-      noOfrating: 100,
+    productName: "Phone 2",
+    price: {
+      originalPrice: "33000",
+      offerPrice: "27000",
+      currentPrice: "27000",
     },
-    showCompare: false,
+    image:
+      "https://www.91-img.com/gallery_images_uploads/d/7/d7cf5e2b1a3a3dfcca8a8dbb524fb11a8fb1c8e8.JPG?tr=h-550,w-0,c-at_max",
+    inStock: 0,
+    rating: {
+      average: 4.1,
+      numberOfRatings: 200,
+    },
   },
 ];
 // export default function Homepage() {
@@ -69,3 +81,17 @@ const arrayTest = [
 //     </Layout>
 //   )
 // }
+
+
+const a = {
+  productName: "",
+  price: {
+  originalPrice: "",
+  currentPrice: "",
+  },
+  brand: "",
+  quantity: 0,
+  images: [""]
+
+
+}

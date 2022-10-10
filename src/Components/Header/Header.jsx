@@ -2,9 +2,11 @@ import React, { useContext } from 'react'
 import "./header.scss"
 import { Context } from './../Context/Context';
 export default function Header() {
-  const data = React.useContext(Context)
+  const data = useContext(Context)
   console.log(data);
   return (
-    <h1><button>Cart({data.test})</button></h1>
+    <div className="header">
+      <button>Cart({data.cartCount})</button>
+    </div>
   )
 }
