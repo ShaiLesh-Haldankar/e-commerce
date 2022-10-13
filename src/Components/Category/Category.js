@@ -1,13 +1,14 @@
 import React from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import "./category.scss";
-export default function Category() {
+export default function Category(props) {
+  const { category } = props;
   return (
     <div className="category-main mb-4">
-      <h5 className="category-title mb-4">Apple</h5>
+      <h5 className="category-title mb-4">{category.brandName}</h5>
       <div className="category-products-wrapper pb-4">
         {data.map((data) => (
-          <ProductCard data={data}/>
+          <ProductCard data={data} />
         ))}
       </div>
     </div>
@@ -26,7 +27,9 @@ const data = [
       "Exynos 850 Processor",
       "1 Year Warranty Provided By the Manufacturer from Date ofPurchase",
     ],
-    productImage: ["https://www.transparentpng.com/thumb/-iphone-x/7vQ8aI-iphone-pictures-transparent-png-pictures-free-icons.png"],
+    productImage: [
+      "https://www.transparentpng.com/thumb/-iphone-x/7vQ8aI-iphone-pictures-transparent-png-pictures-free-icons.png",
+    ],
     price: {
       currentPrice: "36,000",
       originalPrice: "60,000",
@@ -44,7 +47,9 @@ const data = [
       "A Bionic 850 Processor",
       "1 Year Warranty Provided By the Manufacturer from Date ofPurchase",
     ],
-    productImage: ["https://www.transparentpng.com/thumb/-iphone-x/7vQ8aI-iphone-pictures-transparent-png-pictures-free-icons.png"],
+    productImage: [
+      "https://www.transparentpng.com/thumb/-iphone-x/7vQ8aI-iphone-pictures-transparent-png-pictures-free-icons.png",
+    ],
     price: {
       currentPrice: "45,000",
       originalPrice: "65,000",
@@ -62,7 +67,9 @@ const data = [
       "A14 Bionic 850 Processor",
       "1 Year Warranty Provided By the Manufacturer from Date ofPurchase",
     ],
-    productImage: ["https://www.transparentpng.com/thumb/-iphone-x/7vQ8aI-iphone-pictures-transparent-png-pictures-free-icons.png"],
+    productImage: [
+      "https://www.transparentpng.com/thumb/-iphone-x/7vQ8aI-iphone-pictures-transparent-png-pictures-free-icons.png",
+    ],
     price: {
       currentPrice: "65,000",
       originalPrice: "75,000",
