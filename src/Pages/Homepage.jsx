@@ -8,7 +8,7 @@ export default function Homepage() {
   return (
     <>
       <Layout>
-        <div className="homepage-main px-5 py-4">
+        <div className="homepage-main py-4">
           <Category />
         </div>
       </Layout>

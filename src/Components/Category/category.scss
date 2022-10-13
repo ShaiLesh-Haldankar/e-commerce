@@ -3,5 +3,16 @@
     font-weight: 700;
   }
   .category-products-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 2rem;
+      overflow-x: scroll;
+      &::-webkit-scrollbar{
+          height: 8px;
+      }
+      &::-webkit-scrollbar-thumb{
+          background-color: var(--border-color);
+          border-radius: 5px;
+      }
   }
 }
