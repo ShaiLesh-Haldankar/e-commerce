@@ -11,35 +11,7 @@ export default function Homepage() {
 
   return (
     <>
-      <Layout>
-        <div className="homepage">
-          {arrayTest.map((data) => (
-            <div className="card">
-              <img src="https://www.91-img.com/gallery_images_uploads/d/7/d7cf5e2b1a3a3dfcca8a8dbb524fb11a8fb1c8e8.JPG?tr=h-550,w-0,c-at_max" />
-              <h5>{data.productName}</h5>
-              <p>{data.price.currentPrice}</p>
-              {data.inStock > 0 ? (
-                <button
-                  onClick={() => context.setCartCount(context.cartCount + 1)}
-                >
-                  Add to Cart
-                </button>
-              ) : (
-                <h6>Out of Stock</h6>
-              )}
-            </div>
-          ))}
-
-          {/* {
-            arrayTest.map(obj =>  <div className="card">
-            <img src="https://www.91-img.com/gallery_images_uploads/d/7/d7cf5e2b1a3a3dfcca8a8dbb524fb11a8fb1c8e8.JPG?tr=h-550,w-0,c-at_max" />
-            <h5>{obj.productName}</h5>
-            <p>{obj.price.currentPrice}</p>
-            <button>Add to Cart</button>
-          </div>)
-          } */}
-        </div>
-      </Layout>
+      <Layout></Layout>
     </>
   );
 }
