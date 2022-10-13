@@ -1,0 +1,33 @@
+.footer {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  text-align: center;
+  .footer-content {
+    p {
+      margin: 1rem 20%;
+    }
+    div{
+        button{
+            
+        background-color: transparent;
+        border: 0;
+        }
+    }
+  }
+  .footer-label{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p{
+          margin: 0;
+      }
+      ul{
+          margin: 0;
+          list-style: none;
+          display: flex;
+          li{
+              margin-right: 10px;
+          }
+      }
+  }
+}
