@@ -25,7 +25,7 @@ export default function ProductCard(props) {
         }
       </div>
       <div className="product-image">
-        <img src="https://www.transparentpng.com/thumb/-iphone-x/7vQ8aI-iphone-pictures-transparent-png-pictures-free-icons.png" />
+        <img src={data.productImage[0]} />
       </div>
     </div>
   );
