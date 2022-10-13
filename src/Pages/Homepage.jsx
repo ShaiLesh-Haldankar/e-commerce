@@ -7,9 +7,6 @@ export default function Homepage() {
   const [count, setCount] = React.useState(0);
   useEffect(() => {
     // setList(arrayTest);
-
-
-
   }, []);
 
   return (
@@ -21,7 +18,15 @@ export default function Homepage() {
               <img src="https://www.91-img.com/gallery_images_uploads/d/7/d7cf5e2b1a3a3dfcca8a8dbb524fb11a8fb1c8e8.JPG?tr=h-550,w-0,c-at_max" />
               <h5>{data.productName}</h5>
               <p>{data.price.currentPrice}</p>
-              {data.inStock > 0?<button onClick={()=>context.setCartCount(context.cartCount + 1)}>Add to Cart</button>: <h6>Out of Stock</h6>}
+              {data.inStock > 0 ? (
+                <button
+                  onClick={() => context.setCartCount(context.cartCount + 1)}
+                >
+                  Add to Cart
+                </button>
+              ) : (
+                <h6>Out of Stock</h6>
+              )}
             </div>
           ))}
 
@@ -82,16 +87,13 @@ const arrayTest = [
 //   )
 // }
 
-
 const a = {
   productName: "",
   price: {
-  originalPrice: "",
-  currentPrice: "",
+    originalPrice: "",
+    currentPrice: "",
   },
   brand: "",
   quantity: 0,
-  images: [""]
-
-
-}
+  images: [""],
+};
