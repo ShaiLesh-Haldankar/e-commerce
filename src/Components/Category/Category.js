@@ -3,7 +3,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import "./category.scss";
 export default function Category() {
   return (
-    <div className="category-main">
+    <div className="category-main mb-4">
       <h5 className="category-title mb-4">Apple</h5>
       <div className="category-products-wrapper pb-4">
         {data.map((data) => (
