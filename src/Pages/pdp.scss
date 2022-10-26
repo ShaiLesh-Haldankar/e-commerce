@@ -1,0 +1,11 @@
+.pdp{
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    .product-card{
+        width: 100%;
+        box-shadow: none;
+        .product-details{
+            order: 1;
+        }
+    }
+}

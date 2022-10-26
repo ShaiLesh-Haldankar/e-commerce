@@ -17,13 +17,15 @@ export default function Homepage() {
   );
 }
 
-const categoryList = [
+export const categoryList = [
   {
     brandName: "Apple",
+    brand_id: "apple",
     products: [
       {
         productname: "Iphone 11 mini",
         brand: "Apple",
+        product_id: "iphone-11-mini",
         miniSpecs: [
           "4 GB RAM | 64 GB ROM | Expandable Upto 1 TB",
           "16.76 cm (6.6 inch) Full HD+ Display",
@@ -44,6 +46,7 @@ const categoryList = [
       {
         productname: "Iphone 12 ",
         brand: "Apple",
+        product_id: "iphone-12",
         miniSpecs: [
           "3 GB RAM | 32 GB ROM | Expandable Upto 1 TB",
           "16.76 cm (6.2 inch) Full HD+ Display",
@@ -64,6 +67,7 @@ const categoryList = [
       {
         productname: "Iphone 13 mini",
         brand: "Apple",
+        product_id: "iphone-13-mini",
         miniSpecs: [
           "2 GB RAM | 64 GB ROM | Expandable Upto 1 TB",
           "16.76 cm (5.6 inch) Full HD+ Display",
@@ -88,7 +92,8 @@ const categoryList = [
     products: [
       {
         productname: "Samsung A52",
-        brand: "Apple",
+        brand: "Samsung",
+        product_id: "samsung-a52",
         miniSpecs: [
           "4 GB RAM | 64 GB ROM | Expandable Upto 1 TB",
           "16.76 cm (6.6 inch) Full HD+ Display",
@@ -108,7 +113,8 @@ const categoryList = [
       },
       {
         productname: "Samsung S20FE",
-        brand: "Apple",
+        brand: "Samsung",
+        product_id: "samsung-s20fe",
         miniSpecs: [
           "3 GB RAM | 32 GB ROM | Expandable Upto 1 TB",
           "16.76 cm (6.2 inch) Full HD+ Display",
@@ -134,7 +140,8 @@ const categoryList = [
     products: [
       {
         productname: "Redmi Note 10",
-        brand: "Apple",
+        brand: "Xiaomi",
+        product_id: "redmi-note-10",
         miniSpecs: [
           "4 GB RAM | 64 GB ROM | Expandable Upto 1 TB",
           "16.76 cm (6.6 inch) Full HD+ Display",
@@ -154,7 +161,8 @@ const categoryList = [
       },
       {
         productname: "Redmi Note 10 Pro ",
-        brand: "Apple",
+        brand: "Xiaomi",
+        product_id: "redmi-note-10-pro",
         miniSpecs: [
           "3 GB RAM | 32 GB ROM | Expandable Upto 1 TB",
           "16.76 cm (6.2 inch) Full HD+ Display",

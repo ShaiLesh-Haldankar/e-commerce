@@ -53,6 +53,20 @@
 
       }
     }
+    .view-product{
+      background-color: #ffffff;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #274690;
+      border: 1px solid #274690;
+      margin-left: 1rem;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 0.2rem 1rem;
+    }
     .product-image {
       width: 180px;
       flex: none;
