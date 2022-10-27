@@ -23,7 +23,7 @@ export const categoryList = [
     brand_id: "apple",
     products: [
       {
-        productname: "Iphone 11 mini",
+        productName: "Iphone 11 mini",
         brand: "Apple",
         product_id: "iphone-11-mini",
         miniSpecs: [
@@ -38,13 +38,13 @@ export const categoryList = [
           "https://www.transparentpng.com/thumb/-iphone-x/7vQ8aI-iphone-pictures-transparent-png-pictures-free-icons.png",
         ],
         price: {
-          currentPrice: "36,000",
-          originalPrice: "60,000",
+          currentPrice: "36000",
+          originalPrice: "60000",
         },
         quantity: 2,
       },
       {
-        productname: "Iphone 12 ",
+        productName: "Iphone 12 ",
         brand: "Apple",
         product_id: "iphone-12",
         miniSpecs: [
@@ -59,13 +59,13 @@ export const categoryList = [
           "https://pngimg.com/uploads/iphone_12/iphone_12_PNG17.png",
         ],
         price: {
-          currentPrice: "45,000",
-          originalPrice: "65,000",
+          currentPrice: "45000",
+          originalPrice: "65000",
         },
         quantity: 0,
       },
       {
-        productname: "Iphone 13 mini",
+        productName: "Iphone 13 mini",
         brand: "Apple",
         product_id: "iphone-13-mini",
         miniSpecs: [
@@ -80,8 +80,8 @@ export const categoryList = [
           "https://fscl01.fonpit.de/devices/18/2018.png",
         ],
         price: {
-          currentPrice: "65,000",
-          originalPrice: "75,000",
+          currentPrice: "65000",
+          originalPrice: "75000",
         },
         quantity: 2,
       },
@@ -91,7 +91,7 @@ export const categoryList = [
     brandName: "Samsung",
     products: [
       {
-        productname: "Samsung A52",
+        productName: "Samsung A52",
         brand: "Samsung",
         product_id: "samsung-a52",
         miniSpecs: [
@@ -106,13 +106,13 @@ export const categoryList = [
           "https://images.samsung.com/is/image/samsung/p6pim/levant/sm-a526bzwhmeb/gallery/levant-galaxy-a52-5g-a526-sm-a526bzwhmeb-421564731?$650_519_PNG$",
         ],
         price: {
-          currentPrice: "26,000",
-          originalPrice: "40,000",
+          currentPrice: "26000",
+          originalPrice: "40000",
         },
         quantity: 2,
       },
       {
-        productname: "Samsung S20FE",
+        productName: "Samsung S20FE",
         brand: "Samsung",
         product_id: "samsung-s20fe",
         miniSpecs: [
@@ -127,8 +127,8 @@ export const categoryList = [
           "https://images.samsung.com/is/image/samsung/in-clear-standing-cover-for-galaxy-s20-fe-ef-jg780ctegin-fronttransparent-thumb-307977964?$480_480_PNG$",
         ],
         price: {
-          currentPrice: "45,000",
-          originalPrice: "65,000",
+          currentPrice: "45000",
+          originalPrice: "65000",
         },
         quantity: 0,
       }
@@ -139,7 +139,7 @@ export const categoryList = [
     brandName: "Redmi",
     products: [
       {
-        productname: "Redmi Note 10",
+        productName: "Redmi Note 10",
         brand: "Xiaomi",
         product_id: "redmi-note-10",
         miniSpecs: [
@@ -154,13 +154,13 @@ export const categoryList = [
           "http://cdn.shopify.com/s/files/1/0602/9334/9613/products/Xiaomi-Redmi-Note-10-Pro_Color__Glacier-Blue.png?v=1661601440",
         ],
         price: {
-          currentPrice: "17,999",
-          originalPrice: "20,000",
+          currentPrice: "17999",
+          originalPrice: "20000",
         },
         quantity: 2,
       },
       {
-        productname: "Redmi Note 10 Pro ",
+        productName: "Redmi Note 10 Pro ",
         brand: "Xiaomi",
         product_id: "redmi-note-10-pro",
         miniSpecs: [
@@ -175,8 +175,8 @@ export const categoryList = [
           "https://images.samsung.com/is/image/samsung/p6pim/latin_en/2202/gallery/latin-en-galaxy-s22-s901-412946-sm-s901ezgjgto-thumb-530964482?$480_480_PNG$",
         ],
         price: {
-          currentPrice: "19,000",
-          originalPrice: "22,000",
+          currentPrice: "19000",
+          originalPrice: "22000",
         },
         quantity: 10,
       }

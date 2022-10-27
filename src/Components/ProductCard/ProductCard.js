@@ -1,12 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./product-card.scss";
+import { Context } from "./../Context/Context";
 export default function ProductCard(props) {
+  const context = React.useContext(Context);
+  const { addItemToCart, checkIfPresentInCart } = context;
   const { data } = props;
+
+  const handleAddToCart = () => {
+    addItemToCart(data);
+  };
   return (
     <div className="product-card">
       <div className="product-details">
-        <h6 className="name">{(data && data.productname) || "NA"}</h6>
+        <h6 className="name">{(data && data.productName) || "NA"}</h6>
         <ul>
           {data &&
             data.miniSpecs &&
@@ -17,8 +24,18 @@ export default function ProductCard(props) {
           <s>₹${data && data.price && data.price.originalPrice}</s>
         </h6>
         <div className="d-flex">
-          {data.quantity > 0 ? (
+          {checkIfPresentInCart(data) ? (
             <button className="add-to-cart">
+              Added to{" "}
+              <img
+                src="https://img.icons8.com/material-outlined/48/02C3BD/shopping-cart.png"
+                height="16"
+                width="16"
+                style={{marginLeft: 5}}
+              />
+            </button>
+          ) : data.quantity > 0 ? (
+            <button className="add-to-cart" onClick={handleAddToCart}>
               <img
                 src="https://img.icons8.com/material-outlined/48/02C3BD/shopping-cart.png"
                 height="16"
