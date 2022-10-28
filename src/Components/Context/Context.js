@@ -2,7 +2,6 @@ import React, { createContext } from "react";
 
 export const Context = createContext();
 export default function ContextProvider({ children }) {
-  const [test, setTest] = React.useState(0);
   const [cartData, setCartData] = React.useState([]);
   const [cartCount, setCartCount] = React.useState(0);
   const [cartCalculation, setCartCalculation] = React.useState({
@@ -16,7 +15,10 @@ export default function ContextProvider({ children }) {
       return obj.product_id !== data.product_id;
     });
     setCartData([...newCart]);
+    localStorage.setItem("CART_DATA", JSON.stringify([...newCart]))
   };
+
+
   const checkIfPresentInCart = (data) => {
     let prod = cartData.find((obj) => {
       return data.product_id === obj.product_id;
@@ -25,12 +27,19 @@ export default function ContextProvider({ children }) {
     return true;
   };
 
+
   const addItemToCart = (data) => {
     if (!data) return;
+    // cartData.push(data)
+    // setCartData([...cartData])
     setCartData([...cartData, { ...data, addedQuantity: 1 }]);
+    localStorage.setItem("CART_DATA",JSON.stringify([...cartData, { ...data, addedQuantity: 1 }]) )
+
+
   };
 
   const updateCartCount = (data) => {
+    console.log(data);
     if (checkIfPresentInCart(data)) {
       if (data.addedQuantity == 0) {
         deleteItemFromCart(data);
@@ -39,8 +48,10 @@ export default function ContextProvider({ children }) {
       let index = cartData.findIndex((obj) => {
         return obj.product_id === data.product_id;
       });
+      
       cartData[index] = { ...data };
       setCartData([...cartData]);
+      localStorage.setItem("CART_DATA",JSON.stringify([...cartData]))
     }
   };
 
@@ -58,7 +69,15 @@ export default function ContextProvider({ children }) {
     setCartCalculation({ ...temp });
   };
 
+  React.useEffect(()=>{
+    let data =JSON.parse(localStorage.getItem("CART_DATA"))
+    setCartData(data)
+    console.log("data",data );
+
+  },[])
+
   React.useEffect(() => {
+    console.log("tesssssssssssst");
     calculate();
   }, [cartData]);
 

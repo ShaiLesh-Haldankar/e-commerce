@@ -4,7 +4,9 @@ import Layout from "./../Components/Layout/Layout";
 import "./checkout.scss";
 import { Context } from "./../Components/Context/Context";
 export default function Checkout() {
-  const { cartData, cartCalculation } = React.useContext(Context);
+
+  const { cartData, cartCalculation } = React.useContext(Context); // Call context object
+
   return (
     <Layout>
       <div className="checkout-main">

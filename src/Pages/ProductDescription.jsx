@@ -8,6 +8,7 @@ export default function ProductDescription() {
   const { productId } = useParams();
   const [productDetais, setProductDetails] = React.useState(null);
 
+
   const getProductDetails = () => {
     let data = null;
     categoryList.map((category) => {
@@ -23,6 +24,7 @@ export default function ProductDescription() {
   React.useEffect(() => {
     getProductDetails();
   }, []);
+
   if(!productDetais){
     return "Loading...."
 
