@@ -1,6 +1,7 @@
 import React, { createContext } from "react";
 
 export const Context = createContext();
+
 export default function ContextProvider({ children }) {
   const [cartData, setCartData] = React.useState([]);
   const [cartCount, setCartCount] = React.useState(0);
@@ -48,8 +49,10 @@ export default function ContextProvider({ children }) {
       let index = cartData.findIndex((obj) => {
         return obj.product_id === data.product_id;
       });
+      //Finding which object to be updated
       
       cartData[index] = { ...data };
+      //updating that index
       setCartData([...cartData]);
       localStorage.setItem("CART_DATA",JSON.stringify([...cartData]))
     }
@@ -60,6 +63,10 @@ export default function ContextProvider({ children }) {
       totalAmount: 0,
       totalAmountWithDiscount: 0,
     };
+    let sum;
+    [1,2,3,4].map(x =>{
+      sum = sum + x
+    })
     cartData.map((obj) => {
       temp.totalAmount =
         temp.totalAmount + obj.addedQuantity * obj.price.originalPrice;
@@ -70,7 +77,7 @@ export default function ContextProvider({ children }) {
   };
 
   React.useEffect(()=>{
-    let data =JSON.parse(localStorage.getItem("CART_DATA"))
+    let data =JSON.parse(localStorage.getItem("CART_DATA")) || []
     setCartData(data)
     console.log("data",data );
 
