@@ -16,3 +16,13 @@
       }
   }
 }
+
+@media (max-width: 767px) {
+  .category-main {
+    .category-products-wrapper {
+      flex-wrap: nowrap;
+    }
+
+  }
+  
+}

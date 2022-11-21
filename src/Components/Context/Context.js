@@ -1,6 +1,7 @@
 import React, { createContext } from "react";
 
 export const Context = createContext();
+
 export default function ContextProvider({ children }) {
   const [cartData, setCartData] = React.useState([]);
   const [cartCount, setCartCount] = React.useState(0);
@@ -15,9 +16,8 @@ export default function ContextProvider({ children }) {
       return obj.product_id !== data.product_id;
     });
     setCartData([...newCart]);
-    localStorage.setItem("CART_DATA", JSON.stringify([...newCart]))
+    localStorage.setItem("CART_DATA", JSON.stringify([...newCart]));
   };
-
 
   const checkIfPresentInCart = (data) => {
     let prod = cartData.find((obj) => {
@@ -27,15 +27,15 @@ export default function ContextProvider({ children }) {
     return true;
   };
 
-
   const addItemToCart = (data) => {
     if (!data) return;
     // cartData.push(data)
     // setCartData([...cartData])
     setCartData([...cartData, { ...data, addedQuantity: 1 }]);
-    localStorage.setItem("CART_DATA",JSON.stringify([...cartData, { ...data, addedQuantity: 1 }]) )
-
-
+    localStorage.setItem(
+      "CART_DATA",
+      JSON.stringify([...cartData, { ...data, addedQuantity: 1 }])
+    );
   };
 
   const updateCartCount = (data) => {
@@ -48,10 +48,12 @@ export default function ContextProvider({ children }) {
       let index = cartData.findIndex((obj) => {
         return obj.product_id === data.product_id;
       });
-      
+      //Finding which object to be updated
+
       cartData[index] = { ...data };
+      //updating that index
       setCartData([...cartData]);
-      localStorage.setItem("CART_DATA",JSON.stringify([...cartData]))
+      localStorage.setItem("CART_DATA", JSON.stringify([...cartData]));
     }
   };
 
@@ -60,24 +62,26 @@ export default function ContextProvider({ children }) {
       totalAmount: 0,
       totalAmountWithDiscount: 0,
     };
+    let sum;
+    [1, 2, 3, 4].map((x) => {
+      sum = sum + x;
+    });
     cartData.map((obj) => {
       temp.totalAmount =
         temp.totalAmount + obj.addedQuantity * obj.price.originalPrice;
       temp.totalAmountWithDiscount =
-        temp.totalAmountWithDiscount + obj.addedQuantity * obj.price.currentPrice;
+        temp.totalAmountWithDiscount +
+        obj.addedQuantity * obj.price.currentPrice;
     });
     setCartCalculation({ ...temp });
   };
 
-  React.useEffect(()=>{
-    let data =JSON.parse(localStorage.getItem("CART_DATA"))
-    setCartData(data)
-    console.log("data",data );
-
-  },[])
+  React.useEffect(() => {
+    let data = JSON.parse(localStorage.getItem("CART_DATA")) || [];
+    setCartData(data);
+  }, []);
 
   React.useEffect(() => {
-    console.log("tesssssssssssst");
     calculate();
   }, [cartData]);
 
@@ -91,7 +95,7 @@ export default function ContextProvider({ children }) {
         updateCartCount,
         checkIfPresentInCart,
         cartData,
-        cartCalculation
+        cartCalculation,
       }}
     >
       {children}
