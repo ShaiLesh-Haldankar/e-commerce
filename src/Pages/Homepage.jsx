@@ -35,7 +35,7 @@ export const categoryList = [
           "1 Year Warranty Provided By the Manufacturer from Date ofPurchase",
         ],
         productImage: [
-          "https://www.transparentpng.com/thumb/-iphone-x/7vQ8aI-iphone-pictures-transparent-png-pictures-free-icons.png",
+          "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aXBob25lJTIwMTF8ZW58MHx8MHx8&w=1000&q=80",
         ],
         price: {
           currentPrice: "36000",
